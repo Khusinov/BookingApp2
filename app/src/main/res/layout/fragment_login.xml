@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="12sp"
         android:text="@string/ro_yxatdan_o_tish"
-        android:textColor="#4155C6"
+        android:textColor="#0F111B"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
