@@ -24,24 +24,14 @@
         android:id="@+id/phone_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:hint="Telefon raqam"
         android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@id/password_edt"
+        app:layout_constraintBottom_toTopOf="@id/enter_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image1" />
 
-    <EditText
-        android:id="@+id/password_edt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Parol"
-        android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone_edt" />
 
     <Button
         android:id="@+id/enter_btn"
@@ -52,12 +42,13 @@
         android:text="Kirish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_edt" />
+        app:layout_constraintTop_toBottomOf="@id/phone_edt" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12sp"
+        android:layout_margin="22dp"
         android:text="@string/ro_yxatdan_o_tish"
         android:textColor="#0F111B"
         android:textSize="22sp"
