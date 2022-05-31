@@ -44,6 +44,7 @@
                 android:id="@+id/price_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#985F5F"
                 android:layout_weight="1"
                 android:text="@string/narxi" />
         </LinearLayout>

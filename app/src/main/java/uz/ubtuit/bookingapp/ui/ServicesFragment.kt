@@ -1,4 +1,4 @@
-package uz.ubtuit.bookingapp.UI
+package uz.ubtuit.bookingapp.ui
 
 import android.os.Bundle
 import android.view.View
