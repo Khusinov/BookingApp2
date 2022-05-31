@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="30dp"
     android:orientation="vertical"
-    tools:context="ui.LoginFragment">
+    tools:context="ui.LoginActivity">
 
 
     <ImageView
@@ -38,22 +38,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#CC6B6B"
-        android:text="Kirish"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Kodni olish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phone_edt" />
 
+    <EditText
+        android:id="@+id/sms_code_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SMS code"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/enter_btn" />
 
     <TextView
+        android:id="@+id/resend_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="22dp"
-        android:text="@string/ro_yxatdan_o_tish"
-        android:textColor="#0F111B"
-        android:textSize="22sp"
+        android:text="Kodni qayta yuborish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enter_btn" />
+        app:layout_constraintTop_toBottomOf="@id/sms_code_et" />
+
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="22dp"-->
+    <!--        android:text="@string/ro_yxatdan_o_tish"-->
+    <!--        android:textColor="#0F111B"-->
+    <!--        android:textSize="22sp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/enter_btn" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

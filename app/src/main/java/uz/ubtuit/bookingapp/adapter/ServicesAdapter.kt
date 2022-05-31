@@ -8,20 +8,21 @@ import uz.ubtuit.bookingapp.R
 import uz.ubtuit.bookingapp.databinding.ItemBinding
 import uz.ubtuit.bookingapp.model.Services
 
-class ServicesAdapter(): RecyclerView.Adapter<ServicesAdapter.ServicesHolder>() {
-    private val list = mutableListOf<Services>()
+class ServicesAdapter(var list: List<Services>): RecyclerView.Adapter<ServicesAdapter.ServicesHolder>() {
 
-    fun submitList(list: List<Services>, listOf: List<Services>, listOf1: List<Services>) {
-        this.list.clear()
-        this.list.addAll(list)
-        notifyDataSetChanged()
-    }
+
+//    fun submitList(list: List<Services>, listOf: List<Services>, listOf1: List<Services>) {
+//        this.list.clear()
+//        this.list.addAll(list)
+//        notifyDataSetChanged()
+//    }
 
     class ServicesHolder(item: View): RecyclerView.ViewHolder(item) {
-        val binding = ItemBinding.bind(item)
-        fun bind(services: Services) = binding.apply {
-            specialistIV.setImageResource(services.imageId)
-            spesialitsName.setText(services.name)
+        private val binding = ItemBinding.bind(item)
+
+        fun onBind(services: Services) {
+            binding.specialistIV.setImageResource(services.imageId)
+            binding.spesialitsName.setText(services.name)
         }
     }
 
@@ -32,7 +33,7 @@ class ServicesAdapter(): RecyclerView.Adapter<ServicesAdapter.ServicesHolder>() 
     }
 
     override fun onBindViewHolder(holder: ServicesHolder, position: Int) {
-        holder.bind(list[position])
+        holder.onBind(list[position])
     }
 
     override fun getItemCount(): Int {
