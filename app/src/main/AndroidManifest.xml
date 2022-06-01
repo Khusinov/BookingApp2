@@ -14,7 +14,7 @@
         android:theme="@style/Theme.BookingApp"
         tools:targetApi="31">
         <activity
-            android:name=".DateChooseActivity"
+            android:name=".ui.DateChooseActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ServicesActivity"
