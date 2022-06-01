@@ -33,7 +33,11 @@ class ServicesActivity : AppCompatActivity() {
 
         serviceAdapter = ServicesAdapter(list)
         binding.specialRv.adapter = serviceAdapter
+
         serviceAdapter.notifyItemInserted(list.size)
+
+
+
 
 
 
