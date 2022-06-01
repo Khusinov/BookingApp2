@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import uz.ubtuit.bookingapp.R
+import uz.ubtuit.bookingapp.UI.DatePickerActivity
 import uz.ubtuit.bookingapp.databinding.ItemBinding
 import uz.ubtuit.bookingapp.model.Services
 
@@ -23,7 +24,7 @@ class ServicesAdapter(var list: List<Services>) :
 
             itemView.setOnClickListener {
                 // Toast.makeText(it.context, position.toString(), Toast.LENGTH_SHORT).show()
-                val intent = Intent(it.context, DateChooseActivity::class.java)
+                val intent = Intent(it.context, DatePickerActivity::class.java)
                 intent.putExtra("id", "$position")
                 it.context.startActivity(intent)
             }

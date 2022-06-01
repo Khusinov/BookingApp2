@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.DatePickerActivity">
+
+    <TextView
+        android:id="@+id/chooseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Qulay vaqtni tanlang"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/chooseDate"/>
+    <TextView
+        android:id="@+id/timeTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/time1"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@id/datePicker"
+        app:layout_constraintTop_toBottomOf="@id/datePicker" />
+
+    <TextView
+        android:id="@+id/timeTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv1"
+        android:layout_marginStart="8dp"
+        android:text="@string/time2"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/datePicker"/>
+
+    <TextView
+        android:id="@+id/timeTv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv2"
+        app:layout_constraintTop_toBottomOf="@id/datePicker"
+        android:text="@string/time3"
+        android:textSize="25sp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/timeTv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv3"
+        app:layout_constraintTop_toBottomOf="@id/datePicker"
+        android:text="@string/time4"
+        android:textSize="25sp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/timeTv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/timeTv1"
+        app:layout_constraintTop_toBottomOf="@id/timeTv1"
+        android:text="@string/time5"
+        android:textSize="25sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/timeTv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv5"
+        app:layout_constraintTop_toBottomOf="@id/timeTv2"
+        android:layout_marginStart="8dp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:text="@string/time6"/>
+
+    <TextView
+        android:id="@+id/timeTv7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv6"
+        app:layout_constraintTop_toBottomOf="@id/timeTv3"
+        android:layout_marginStart="8dp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:text="@string/time7"/>
+
+    <TextView
+        android:id="@+id/timeTv8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/timeTv7"
+        app:layout_constraintTop_toBottomOf="@id/timeTv4"
+        android:layout_marginStart="8dp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:text="@string/time8"/>
+
+
+    <Button
+        android:id="@+id/bookingBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book"
+        app:layout_constraintStart_toStartOf="@id/datePicker"
+        app:layout_constraintTop_toBottomOf="@id/timeTv5"
+        android:layout_marginTop="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

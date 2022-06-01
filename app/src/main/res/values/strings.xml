@@ -9,4 +9,14 @@
     <string name="Spesialist_name">Chinora</string>
     <string name="spesialists">Spesialistlar</string>
     <string name="mutaxasislar">Mutaxasislar</string>
+    <string name="time1">08:00</string>
+    <string name="time2">09:00</string>
+    <string name="time3">10:00</string>
+    <string name="time4">11:00</string>
+    <string name="time5">12:00</string>
+    <string name="time6">15:00</string>
+    <string name="time7">16:00</string>
+    <string name="time8">17:00</string>
+    <string name="book">Book</string>
+    <string name="chose_date">CHOOSE A DATE</string>
 </resources>
