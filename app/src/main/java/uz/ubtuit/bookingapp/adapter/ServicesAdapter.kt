@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import uz.ubtuit.bookingapp.R
-import uz.ubtuit.bookingapp.UI.DatePickerActivity
+import uz.ubtuit.bookingapp.ui.DatePickerActivity
 import uz.ubtuit.bookingapp.databinding.ItemBinding
 import uz.ubtuit.bookingapp.model.Services
 

@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/drawable/ic_success_24.xml" value="0.2065" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_data_picker.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_date_choose.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_date_picker.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_services.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_sucsecfull.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/fragment_data_chose.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/fragment_reset_password.xml" value="0.23550724637681159" />
