@@ -12,6 +12,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import uz.ubtuit.bookingapp.databinding.ActivityLoginBinding
+import uz.ubtuit.bookingapp.utills.MySharedPreferences
 import java.util.concurrent.TimeUnit
 
 
@@ -22,10 +23,12 @@ class LoginActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        MySharedPreferences.init(this)
 
         auth = FirebaseAuth.getInstance()
         //  auth.languageCode = "en"
@@ -141,8 +144,17 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
 
-                    val user = task.result?.user?.phoneNumber
+                    var user = task.result?.user?.phoneNumber
                     Log.d(TAG, "signInWithPhoneAuthCredential: $user")
+
+                    val intent = Intent(this, ServicesActivity::class.java)
+                    intent.putExtra("phoneNumber" , user )
+                    startActivity(intent)
+
+                    MySharedPreferences.user = user
+                    finish()
+
+
                 } else {
                     // Sign in failed, display a message and update the UI
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
@@ -150,8 +162,7 @@ class LoginActivity : AppCompatActivity() {
                         // The verification code entered was invalid
                     }
                     // Update UI
-                    val intent = Intent(this, ServicesActivity::class.java)
-                    startActivity(intent)
+
 
                 }
             }

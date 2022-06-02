@@ -12,10 +12,10 @@ import uz.ubtuit.bookingapp.UI.DatePickerActivity
 import uz.ubtuit.bookingapp.databinding.ItemBinding
 import uz.ubtuit.bookingapp.model.Services
 
-class ServicesAdapter(var list: List<Services>) :
+class ServicesAdapter(var list: List<Services> ) :
     RecyclerView.Adapter<ServicesAdapter.ServicesHolder>() {
 
-    class ServicesHolder(item: View) : RecyclerView.ViewHolder(item) {
+    inner class ServicesHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding = ItemBinding.bind(item)
 
         fun onBind(services: Services, position: Int) {
