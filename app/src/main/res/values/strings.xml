@@ -18,5 +18,6 @@
     <string name="time7">16:00</string>
     <string name="time8">17:00</string>
     <string name="book">Book</string>
-    <string name="chose_date">CHOOSE A DATE</string>
+    <string name="all_users">All Users</string>
+    <string name="new_orders">New Orders</string>
 </resources>
