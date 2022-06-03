@@ -12,21 +12,29 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 import uz.ubtuit.bookingapp.databinding.ActivityDatePickerBinding
+import uz.ubtuit.bookingapp.model.Datetime
 import uz.ubtuit.bookingapp.utills.MySharedPreferences
 import java.util.*
+import kotlin.collections.ArrayList
 
 class DatePickerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDatePickerBinding
     lateinit var firebaseFirestore: FirebaseFirestore
     private val TAG = "DatePickerActivity"
-    lateinit var date: String
+    lateinit var list: ArrayList<Datetime>
+    var date: String = "null"
+    var booked = false
     lateinit var phoneNumber1: String
-    lateinit var time1: String
+    var time1: String = "null"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDatePickerBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
+
+        MySharedPreferences.init(this)
+
+        list = ArrayList()
 
 
         val picker = binding.datePicker
@@ -93,7 +101,12 @@ class DatePickerActivity : AppCompatActivity() {
         }
 
         binding.bookingBtn.setOnClickListener {
-            ButtonClicked(time1)
+            if (time1 == "null" || date == "null") {
+                Toast.makeText(this, "Kun va vaqtni tanlashingiz kerak!", Toast.LENGTH_SHORT).show()
+            } else {
+                ButtonClicked(time1)
+            }
+
         }
 
     }
@@ -109,19 +122,77 @@ class DatePickerActivity : AppCompatActivity() {
             "time" to time
         )
 
-// Add a new document with a generated ID
+// Get all data
+        list.clear()
+
+        booked = false
+
         db.collection("orders")
-            .add(orders)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                val intent = Intent(this, SucsecfullActivity::class.java)
-                intent.putExtra("dateAndTime", date)
-                startActivity(intent)
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(
+                        "orders",
+                        "${document.id} => ${document.data["date"]} => ${document.data["time"]}"
+                    )
+                    val datetime = Datetime()
+                    datetime.date = document.data["date"].toString()
+                    datetime.time = document.data["time"].toString()
+                    list.add(datetime)
+
+                }
+
+                for (i in list) {
+                    if (date == i.date && time == i.time) {
+                        booked = true
+                        break
+                    }
+                }
+
+                if (!booked) {
+                    // Add a new document with a generated ID
+
+                    if (time1 == "null" || date == "null") {
+                        Toast.makeText(
+                            this,
+                            "Kun va vaqtni tanlashingiz kerak!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+
+                        db.collection("orders")
+                            .add(orders)
+                            .addOnSuccessListener { documentReference ->
+                                Log.d(TAG, "DocumentSnapshot ID: ${documentReference.id}")
+
+
+
+                                val intent = Intent(this, SucsecfullActivity::class.java)
+                                intent.putExtra("date", date)
+                                intent.putExtra("time", time)
+                                startActivity(intent)
+
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w(TAG, "Error adding document", e)
+                                Toast.makeText(
+                                    this,
+                                    "Internet bilan muammo bor.",
+                                    Toast.LENGTH_SHORT
+                                )
+                                    .show()
+                            }
+                    }
+                } else {
+                    Toast.makeText(
+                        this,
+                        "$time allaqachon band qilingan. Iltimos boshqa vaqtni tanlang!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-                Toast.makeText(this, "Internet bilan muammo bor.", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
             }
     }
-
 }

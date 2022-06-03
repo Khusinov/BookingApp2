@@ -13,13 +13,17 @@ class SucsecfullActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySucsecfullBinding.inflate(LayoutInflater.from(this))
-        setContentView(R.layout.activity_sucsecfull)
+        setContentView(binding.root)
 
-        val intent = Intent()
-        val text = intent.getStringExtra("dateAndTime")
-        Toast.makeText(this, "$text", Toast.LENGTH_SHORT).show()
 
-        binding.tvTime.text = text
+        val date = intent.getStringExtra("date")
+        val time = intent.getStringExtra("time")
+        Toast.makeText(this, "$date", Toast.LENGTH_SHORT).show()
+
+
+
+        binding.tvTime1.text = "$date Vaqti: $time"
+
 
     }
 }

@@ -32,14 +32,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
+                <ImageView
                     android:id="@+id/services_Tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:textColor="@color/buttonColor"
-                    android:text="Instagram:"
-                    android:textSize="22sp" />
+                    android:src="@drawable/ic_instagram_svgrepo_com"
+                    />
 
                 <TextView
                     android:id="@+id/insta_username"
@@ -54,7 +54,8 @@
                 android:id="@+id/spesialits_name"
                 android:layout_width="wrap_content"
                 android:textSize="28sp"
-                android:textStyle="bold"
+                android:textStyle="normal"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:text="@string/Spesialist_name" />
 
