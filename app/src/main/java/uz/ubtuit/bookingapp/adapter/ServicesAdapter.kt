@@ -8,11 +8,11 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import uz.ubtuit.bookingapp.R
-import uz.ubtuit.bookingapp.UI.DatePickerActivity
+import uz.ubtuit.bookingapp.ui.DatePickerActivity
 import uz.ubtuit.bookingapp.databinding.ItemBinding
 import uz.ubtuit.bookingapp.model.Services
 
-class ServicesAdapter(var list: List<Services> ) :
+class ServicesAdapter(var list: List<Services>) :
     RecyclerView.Adapter<ServicesAdapter.ServicesHolder>() {
 
     inner class ServicesHolder(item: View) : RecyclerView.ViewHolder(item) {
@@ -21,6 +21,7 @@ class ServicesAdapter(var list: List<Services> ) :
         fun onBind(services: Services, position: Int) {
             binding.specialistIV.setImageResource(services.imageId)
             binding.spesialitsName.text = services.name
+            binding.instaUsername.text = services.username
 
             itemView.setOnClickListener {
                 // Toast.makeText(it.context, position.toString(), Toast.LENGTH_SHORT).show()

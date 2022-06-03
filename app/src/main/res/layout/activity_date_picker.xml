@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".UI.DatePickerActivity">
+    tools:context=".ui.DatePickerActivity">
 
     <TextView
         android:id="@+id/chooseDate"
@@ -41,44 +41,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/datePicker">
 
-        <TextView
+        <Button
             android:id="@+id/timeTv1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_weight="1"
             android:text="@string/time1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
             android:selectAllOnFocus="true"
-            android:textSize="25sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/datePicker"
             app:layout_constraintTop_toBottomOf="@id/datePicker" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/time2"
-            android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/timeTv1"
             app:layout_constraintTop_toBottomOf="@id/datePicker" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/time3"
-            android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/timeTv2"
             app:layout_constraintTop_toBottomOf="@id/datePicker" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -86,8 +89,9 @@
             android:layout_marginEnd="22sp"
             android:layout_weight="1"
             android:text="@string/time4"
-            android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/timeTv3"
             app:layout_constraintTop_toBottomOf="@id/datePicker" />
 
@@ -102,45 +106,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linear1">
 
-        <TextView
+        <Button
             android:id="@+id/timeTv5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_weight="1"
             android:text="@string/time5"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/time6"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/time7"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp" />
 
-        <TextView
+        <Button
             android:id="@+id/timeTv8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:layout_marginEnd="22dp"
             android:text="@string/time8"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/buttonColor"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

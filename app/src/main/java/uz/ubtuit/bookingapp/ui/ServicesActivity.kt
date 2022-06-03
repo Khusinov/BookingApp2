@@ -24,10 +24,10 @@ class ServicesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val list = ArrayList<Services>()
-        val user1 = Services(R.drawable.photo1, "Shaxriyor Xusinov")
-        val user2 = Services(R.drawable.photo2, "Valijon Xusinov")
-        val user3 = Services(R.drawable.photo3, "Saidjon Xusinov")
-        val user4 = Services(R.drawable.photo1, "Nannfdn Xusinov")
+        val user1 = Services(R.drawable.photo3, "Rayxon", "@makeup_rayhone")
+        val user2 = Services(R.drawable.photo2, "Dilnoza", "@jetaim_dilnoza_st")
+        val user3 = Services(R.drawable.photo3, "Anaxon", "@stilist_anush")
+        val user4 = Services(R.drawable.photo2, "Fazilat", "@felisita_makeup")
 
         list.clear()
         list.add(user1)
@@ -35,10 +35,10 @@ class ServicesActivity : AppCompatActivity() {
         list.add(user3)
         list.add(user4)
 
-     //   val intent = Intent()
-      //  val phoneNumber: String? = intent.getStringExtra("phoneNumber")
-    //    Toast.makeText(this, "phoneNumber1", Toast.LENGTH_SHORT).show()
-       // Log.d(TAG, "onCreateServices: $phoneNumber")
+        //   val intent = Intent()
+        //  val phoneNumber: String? = intent.getStringExtra("phoneNumber")
+        //    Toast.makeText(this, "phoneNumber1", Toast.LENGTH_SHORT).show()
+        // Log.d(TAG, "onCreateServices: $phoneNumber")
 
 
         serviceAdapter = ServicesAdapter(list)

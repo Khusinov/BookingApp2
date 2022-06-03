@@ -21,11 +21,11 @@ object MySharedPreferences {
 
     var user: String?
 
-        get() = preferences.getString("key1", "bug")
+        get() = preferences.getString("phoneNumber", "bug")
 
         set(value) = preferences.edit {
             if (value != null) {
-                it.putString("key1", value)
+                it.putString("phoneNumber", value)
             }
         }
 

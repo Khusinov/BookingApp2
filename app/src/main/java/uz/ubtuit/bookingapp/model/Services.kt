@@ -1,3 +1,3 @@
 package uz.ubtuit.bookingapp.model
 
-data class Services(var imageId: Int, val name: String)
+data class Services(var imageId: Int, val name: String, val username:String)

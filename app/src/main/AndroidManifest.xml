@@ -18,13 +18,16 @@
             android:exported="false" />
 
         <activity
-            android:name=".UI.DatePickerActivity"
+            android:name=".ui.SucsecfullActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ServicesActivity"
+            android:name=".ui.DatePickerActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ServicesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
