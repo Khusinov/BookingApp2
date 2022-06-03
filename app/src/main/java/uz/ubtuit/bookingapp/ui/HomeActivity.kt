@@ -2,22 +2,36 @@ package uz.ubtuit.bookingapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import uz.ubtuit.bookingapp.adapter.HomeAdapter
+import androidx.fragment.app.Fragment
+import uz.ubtuit.bookingapp.R
 import uz.ubtuit.bookingapp.databinding.ActivityHomeBinding
-import uz.ubtuit.bookingapp.model.Home
+import uz.ubtuit.bookingapp.navigationBottomFragments.AllUsersFragment
+import uz.ubtuit.bookingapp.navigationBottomFragments.NewOrdersFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
-    private val adapter = HomeAdapter()
+    private val allUsersFragment = AllUsersFragment()
+    private val newOrdersFragment = NewOrdersFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home)
+        replaceFragment(allUsersFragment)
 
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when(it.itemId) {
+               // R.id.ic_all_user -> replaceFragment(allUsersFragment)
+               // R.id.ic_new_orders -> replaceFragment(newOrdersFragment)
+            }
+            true
+        }
+    }
 
-        binding.usersRv.adapter = adapter
-        adapter.submitList(listOf(Home("+998997155311", "03/06/2022", "17:00")),
-        listOf(Home("145465654", "15151", "15:00")))
+    private fun replaceFragment(fragment: Fragment) {
+        if(fragment != null) {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, fragment)
+            transaction.commit()
+        }
     }
 }

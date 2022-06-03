@@ -5,8 +5,13 @@
       <map>
         <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/drawable/ic_all_user.xml" value="0.2075" />
         <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/drawable/ic_new_orders.xml" value="0.2075" />
+        <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/activity_all_users.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/all_users_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/fragment_all_users.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/fragment_new_orders.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/home_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/layout/new_orders_item.xml" value="0.203125" />
         <entry key="..\:/Users/ACER/Desktop/BookingApp/app/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_data_picker.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Shaxriyor/AndroidStudioProjects/BookingApp/app/src/main/res/layout/activity_date_choose.xml" value="0.25416666666666665" />
