@@ -1,3 +1,3 @@
 package uz.ubtuit.bookingapp.model
 
-data class Home(val number: String, val date: String)
+data class Home(var number: String, var date: String, var time: String)

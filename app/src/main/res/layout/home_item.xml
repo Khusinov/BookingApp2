@@ -19,20 +19,37 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
-                android:layout_width="match_parent"
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:hint="number"/>
 
-            <EditText
-                android:id="@+id/editTextTextPersonName4"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="date"
-                android:ems="10" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="date" />
+
+                <EditText
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:hint="time"/>
+
+
+            </LinearLayout>
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
