@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,7 @@
     tools:context=".ui.HomeActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_alignParentBottom="true"
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,16 +15,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu"
-        android:background="#E91E63"
+        android:background="@color/buttonColor"
         app:itemIconTint="#ffff"
         app:itemTextColor="#ffff"/>
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_above="@id/bottom_navigation"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"/>
+        />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

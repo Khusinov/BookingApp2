@@ -20,4 +20,6 @@
     <string name="book">Book</string>
     <string name="all_users">All Users</string>
     <string name="new_orders">New Orders</string>
+    <string name="date">date</string>
+    <string name="ro_yhatga_olinganlar">Ro\'yhatga olinganlar</string>
 </resources>

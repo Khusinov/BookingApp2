@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allUsersFragment">
+
+    <fragment
+        android:id="@+id/allUsersFragment"
+        android:name="uz.ubtuit.bookingapp.navigationBottomFragments.AllUsersFragment"
+        android:label="fragment_all_users"
+        tools:layout="@layout/fragment_all_users" >
+        <action
+            android:id="@+id/action_allUsersFragment_to_newOrdersFragment"
+            app:destination="@id/newOrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newOrdersFragment"
+        android:name="uz.ubtuit.bookingapp.navigationBottomFragments.NewOrdersFragment"
+        android:label="fragment_new_orders"
+        tools:layout="@layout/fragment_new_orders" >
+        <action
+            android:id="@+id/action_newOrdersFragment_to_allUsersFragment"
+            app:destination="@id/allUsersFragment" />
+    </fragment>
+</navigation>

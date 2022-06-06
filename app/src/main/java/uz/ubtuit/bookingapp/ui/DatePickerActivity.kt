@@ -24,6 +24,7 @@ class DatePickerActivity : AppCompatActivity() {
     lateinit var list: ArrayList<Datetime>
     var date: String = "null"
     var booked = false
+    var salon :String = "Rayxon"
     lateinit var phoneNumber1: String
     var time1: String = "null"
 
@@ -33,6 +34,16 @@ class DatePickerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         MySharedPreferences.init(this)
+        val id = intent.extras?.get("id")
+        Log.d(TAG, "onCreateeeeee: $id")
+
+        when (id) {
+            1 -> salon = "Rayxon"
+            2 -> salon = "Dilnoza"
+            3 -> salon = "Anaxon"
+            4 -> salon = "Fazilat"
+        }
+
 
         list = ArrayList()
 
@@ -119,7 +130,8 @@ class DatePickerActivity : AppCompatActivity() {
             "date" to date,
             "name" to "Username",
             "phone" to phoneNumber1,
-            "time" to time
+            "time" to time,
+            "salon" to salon
         )
 
 // Get all data
@@ -164,7 +176,6 @@ class DatePickerActivity : AppCompatActivity() {
                             .add(orders)
                             .addOnSuccessListener { documentReference ->
                                 Log.d(TAG, "DocumentSnapshot ID: ${documentReference.id}")
-
 
 
                                 val intent = Intent(this, SucsecfullActivity::class.java)

@@ -8,17 +8,11 @@ import uz.ubtuit.bookingapp.R
 import uz.ubtuit.bookingapp.databinding.AllUsersItemBinding
 import uz.ubtuit.bookingapp.model.AllUsers
 
-class AllUsersAdapter(): RecyclerView.Adapter<AllUsersAdapter.AllUsersHolder>() {
-    private val list = mutableListOf<AllUsers>()
+class AllUsersAdapter(private var list: ArrayList<AllUsers>) :
+    RecyclerView.Adapter<AllUsersAdapter.AllUsersHolder>() {
 
-    fun submitList(list: List<AllUsers>, listOf: List<AllUsers>) {
-        this.list.clear()
-        this.list.addAll(list)
-        notifyDataSetChanged()
-    }
-
-    class AllUsersHolder(item: View): RecyclerView.ViewHolder(item) {
-        val binding = AllUsersItemBinding.bind(item)
+    class AllUsersHolder(private val binding: AllUsersItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(allUsers: AllUsers) {
             binding.apply {
@@ -30,9 +24,8 @@ class AllUsersAdapter(): RecyclerView.Adapter<AllUsersAdapter.AllUsersHolder>() 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllUsersHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item, parent, false)
-        return AllUsersHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        return AllUsersHolder(AllUsersItemBinding.inflate(inflater))
     }
 
     override fun onBindViewHolder(holder: AllUsersHolder, position: Int) {

@@ -8,31 +8,29 @@ import uz.ubtuit.bookingapp.R
 import uz.ubtuit.bookingapp.databinding.NewOrdersItemBinding
 import uz.ubtuit.bookingapp.model.NewOrders
 
-class NewOrdersAdapter(): RecyclerView.Adapter<NewOrdersAdapter.NewOrdersHolder>() {
-    private val list = mutableListOf<NewOrders>()
+class NewOrdersAdapter(private var list: ArrayList<NewOrders>): RecyclerView.Adapter<NewOrdersAdapter.NewOrdersHolder>() {
+//    private val list = mutableListOf<NewOrders>()
+//
+//    fun submitList(list: List<NewOrders>, listOf: List<NewOrders>) {
+//        this.list.clear()
+//        this.list.addAll(list)
+//        notifyDataSetChanged()
+//    }
 
-    fun submitList(list: List<NewOrders>, listOf: List<NewOrders>) {
-        this.list.clear()
-        this.list.addAll(list)
-        notifyDataSetChanged()
-    }
-
-    class NewOrdersHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val binding = NewOrdersItemBinding.bind(item)
-
+    inner class NewOrdersHolder(private val binding: NewOrdersItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(newOrders: NewOrders) {
             binding.apply {
-                ordersNumber.setText(newOrders.number)
-                ordersDate.setText(newOrders.date)
-                ordersTime.setText(newOrders.time)
+                ordersNumber.text = newOrders.number
+                ordersDate.text = newOrders.date
+                ordersTime.text = newOrders.time
+                salon.text = newOrders.salon
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewOrdersHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item, parent, false)
-        return NewOrdersHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        return NewOrdersHolder(NewOrdersItemBinding.inflate(inflater))
     }
 
     override fun onBindViewHolder(holder: NewOrdersHolder, position: Int) {

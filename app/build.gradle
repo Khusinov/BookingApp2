@@ -55,4 +55,9 @@ dependencies {
     //firebase
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // navigation component
+    def nav_version = "2.3.0-alpha06"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
 }
