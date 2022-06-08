@@ -147,7 +147,7 @@ class LoginActivity : AppCompatActivity() {
                     var user = task.result?.user?.phoneNumber
                     Log.d(TAG, "signInWithPhoneAuthCredential: $user")
 
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, ServicesActivity::class.java)
                     intent.putExtra("phoneNumber" , user )
                     startActivity(intent)
 

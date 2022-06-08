@@ -21,24 +21,36 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="22sp"
         android:text="Muvaffaqqiyatli band qildinggiz!"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginTop="22sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image11" />
+
     <TextView
         android:id="@+id/tvTime1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="22/02/2022 Vaqt: 09:00"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        android:text="22/02/2022 Vaqt: 09:00" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1" />
 
+    <Button
+        android:id="@+id/about_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Batafsil"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

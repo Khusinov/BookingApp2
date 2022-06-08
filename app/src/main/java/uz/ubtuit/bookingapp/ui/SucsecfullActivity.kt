@@ -24,6 +24,14 @@ class SucsecfullActivity : AppCompatActivity() {
 
         binding.tvTime1.text = "$date Vaqti: $time"
 
+        binding.aboutMore.setOnClickListener {
+            var intent = Intent(this , Order_list_activity::class.java)
+            intent.putExtra("date" , date)
+            intent.putExtra("time" , time)
+            startActivity(intent)
+
+        }
+
 
     }
 }
