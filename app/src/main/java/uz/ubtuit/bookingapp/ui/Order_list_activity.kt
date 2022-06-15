@@ -19,7 +19,7 @@ class Order_list_activity : AppCompatActivity() {
     lateinit var binding: ActivityOrderListBinding
     var date: String = "date"
     var time: String = "time"
-    var n = 0
+    var n = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderListBinding.inflate(LayoutInflater.from(this))
@@ -36,6 +36,7 @@ class Order_list_activity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
+                    binding.numberOfClients.text = "O"
 
                     val datetime = Datetime()
                     datetime.date = document.data["date"].toString()
@@ -51,7 +52,7 @@ class Order_list_activity : AppCompatActivity() {
     }
 
     private fun sortDateTime(arrayList: ArrayList<Datetime>) {
-        for (i in 1..arrayList.size) {
+        for (i in 1 until arrayList.size) {
             if (arrayList[i].date == date) {
                 n++
             }

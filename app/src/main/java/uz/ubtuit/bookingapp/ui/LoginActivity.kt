@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.google.firebase.FirebaseException
@@ -148,7 +149,7 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithPhoneAuthCredential: $user")
 
                     val intent = Intent(this, ServicesActivity::class.java)
-                    intent.putExtra("phoneNumber" , user )
+                    intent.putExtra("phoneNumber", user)
                     startActivity(intent)
 
                     MySharedPreferences.user = user
@@ -161,8 +162,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
                     }
-                    // Update UI
-
+                    Toast.makeText(this, "Parol notog'ri kiritildi...", Toast.LENGTH_SHORT).show()
 
                 }
             }
