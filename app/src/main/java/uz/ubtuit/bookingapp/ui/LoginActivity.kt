@@ -24,7 +24,14 @@ class LoginActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
-
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser?.phoneNumber
+        Log.d(TAG, "onStart: ${currentUser.toString()}")
+        updateUI(currentUser.toString())
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -33,6 +40,8 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         //  auth.languageCode = "en"
+
+
 
         binding.enterBtn.setOnClickListener {
             val phoneNumber = binding.phoneEdt.text.toString()
@@ -148,6 +157,8 @@ class LoginActivity : AppCompatActivity() {
                     var user = task.result?.user?.phoneNumber
                     Log.d(TAG, "signInWithPhoneAuthCredential: $user")
 
+                    updateUI(user.toString())
+
                     val intent = Intent(this, ServicesActivity::class.java)
                     intent.putExtra("phoneNumber", user)
                     startActivity(intent)
@@ -166,5 +177,14 @@ class LoginActivity : AppCompatActivity() {
 
                 }
             }
+    }
+
+    private fun updateUI(user:String) {
+        val intent = Intent(this, ServicesActivity::class.java)
+        intent.putExtra("phoneNumber", user)
+        startActivity(intent)
+
+        MySharedPreferences.user = user
+        finish()
     }
 }
