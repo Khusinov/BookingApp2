@@ -29,7 +29,8 @@ class LoginActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser?.phoneNumber
         Log.d(TAG, "onStart: ${currentUser.toString()}")
-        updateUI(currentUser.toString())
+        if (!currentUser.equals("null")) updateUI(currentUser.toString())
+
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {
