@@ -24,14 +24,15 @@ class LoginActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser?.phoneNumber
-        Log.d(TAG, "onStart: ${currentUser.toString()}")
-        if (!currentUser.equals("null")) updateUI(currentUser.toString())
-
-    }
+//    public override fun onStart() {
+//        super.onStart()
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        val currentUser = auth.currentUser?.phoneNumber
+//        Log.d(TAG, "onStart: ${currentUser.toString()}")
+//        if (!currentUser.equals("null") && !currentUser.equals("+998912776191") )
+//            updateUI(currentUser.toString())
+//
+//    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

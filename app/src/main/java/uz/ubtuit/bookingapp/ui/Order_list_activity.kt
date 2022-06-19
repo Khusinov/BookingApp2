@@ -19,7 +19,7 @@ class Order_list_activity : AppCompatActivity() {
     lateinit var binding: ActivityOrderListBinding
     var date: String = "date"
     var time: String = "time"
-    var n = -1
+    var n = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderListBinding.inflate(LayoutInflater.from(this))

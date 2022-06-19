@@ -27,6 +27,7 @@
         android:layout_marginTop="80dp"
         android:hint="Telefon raqam"
         android:inputType="phone"
+        android:text="+998"
         app:layout_constraintBottom_toTopOf="@id/enter_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
